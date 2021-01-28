@@ -1,0 +1,597 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/main/Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1913.0
+margin_bottom = 1073.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1856.0
+margin_bottom = 1016.0
+split_offset = 870
+
+[node name="PanelContainer" type="TabContainer" parent="PanelContainer/MarginContainer/HSplitContainer"]
+margin_right = 878.0
+margin_bottom = 966.0
+
+[node name="History" type="RichTextLabel" parent="PanelContainer/MarginContainer/HSplitContainer/PanelContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+bbcode_text = "
+
+[color=blue]Lorem[/color] [color=red]ipsum[/color] dolor sit amet, consectetur adipiscing elit. Etiam magna enim, venenatis sed elit eget, imperdiet fermentum velit. Mauris finibus nunc diam, id tincidunt purus semper a. Nunc consequat tempus porttitor. Nam laoreet nisi sed elementum mollis. Praesent tempor elit sed tempor interdum. Nunc pharetra justo dui, eget venenatis diam finibus quis. Pellentesque nulla ex, finibus sed elementum nec, placerat sed turpis. Suspendisse finibus gravida sollicitudin. Aenean porttitor tincidunt tortor a sodales. Fusce a aliquam nulla. Praesent quis velit ornare, consequat arcu ut, maximus lectus.
+
+Ut ut elit eleifend lacus pharetra malesuada. Donec sed sollicitudin dui, aliquet mattis turpis. Proin auctor scelerisque libero, eu ullamcorper ipsum scelerisque eget. Duis lacinia nibh id magna mollis ultrices. Suspendisse accumsan lobortis turpis eu pretium. Vivamus feugiat varius justo. Etiam ligula enim, fermentum non urna at, congue efficitur dui.
+
+Nam scelerisque turpis ut finibus molestie. Pellentesque placerat mollis ex eget fringilla. Proin volutpat mi ac turpis dignissim rutrum. Aliquam eu justo lectus. Cras aliquet augue elit, ac viverra enim gravida ut. Nam eu quam quis nisi venenatis convallis eget ac lacus. Aenean eget fringilla tellus. Fusce diam lectus, pulvinar a facilisis sed, sagittis in erat. Donec purus elit, viverra in iaculis sed, congue eu urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In placerat sed nulla sed laoreet.
+
+Proin posuere auctor facilisis. Morbi ac eros arcu. Maecenas rhoncus blandit malesuada. Sed et eros non lacus accumsan molestie in vitae velit. Integer posuere ante nec ornare vehicula. Mauris nunc ipsum, congue non nisl nec, placerat cursus nunc. Vestibulum dui ex, placerat et erat nec, imperdiet vehicula nunc. Etiam ut fermentum est, nec cursus lectus. Praesent eget est a augue elementum bibendum. Nam suscipit facilisis ornare. Nulla at ligula pulvinar, tempor nunc quis, pretium erat.
+
+Vestibulum faucibus non dolor eget rhoncus. Integer posuere felis massa, sed suscipit sapien ultrices id. Duis imperdiet nisl at viverra feugiat. Donec in ex molestie, molestie elit a, ornare odio. Vestibulum congue est at elementum facilisis. Duis sed libero ligula. Suspendisse enim nulla, laoreet vel leo nec, aliquet rutrum dolor. Duis augue risus, hendrerit et rhoncus non, iaculis vel libero. Maecenas accumsan eros ac arcu finibus ultricies. Curabitur non vestibulum magna. Maecenas non risus tempor, finibus nisi a, rutrum ante. Fusce magna eros, efficitur eget sem id, placerat maximus diam. Sed maximus odio ac sem facilisis luctus. Donec non efficitur sem.
+
+In rutrum vestibulum lorem, at interdum sapien consequat quis. Donec ut tincidunt orci. Vivamus pellentesque enim sed commodo ultrices. Morbi luctus dolor vel ante euismod pretium. Pellentesque fringilla ipsum turpis. Suspendisse a ex sapien. Donec ipsum erat, interdum vitae venenatis vitae, consectetur ut est. In blandit lectus nec viverra blandit. Duis a ipsum est. Mauris vel nisl ut sem vehicula interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pharetra mi lorem, vel dapibus magna blandit vel. Sed elit tortor, porta sed enim nec, eleifend rhoncus ante.
+
+Nam dapibus sem nisl, sit amet porttitor nibh semper at. Etiam efficitur mauris eu sollicitudin sagittis. Aenean a mi ipsum. Sed luctus luctus justo id posuere. Pellentesque vulputate tempor tortor, in rutrum turpis euismod et. Maecenas eu faucibus diam, at ornare diam. Cras viverra quam ut lacus pulvinar efficitur. Fusce pharetra ipsum semper interdum fermentum. Aenean vestibulum eleifend elit ut egestas. Duis justo lacus, pretium nec erat quis, feugiat dapibus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi sem velit, lobortis a ultricies at, sagittis consequat odio.
+
+Nulla sed velit metus. Curabitur iaculis pharetra ex, sed congue justo varius id. Integer ac ligula sed erat pulvinar lobortis. Nulla facilisis blandit dui, id gravida urna. Curabitur tincidunt enim sed venenatis egestas. Cras consequat diam sit amet pharetra malesuada. Proin ut tincidunt eros. Curabitur neque ipsum, euismod nec eros vitae, lacinia venenatis mauris. Etiam et odio vel nunc porttitor pulvinar. Donec nec nibh id dolor posuere fringilla. Proin malesuada laoreet purus vitae iaculis. Fusce libero nisi, condimentum vel risus id, vestibulum ullamcorper augue.
+
+Nam sed mattis est. Suspendisse non gravida leo. Vestibulum aliquam urna vitae aliquam hendrerit. Integer nec volutpat urna. Curabitur vitae erat sem. Vestibulum feugiat viverra eros. In aliquam rhoncus egestas. Vestibulum ullamcorper, tellus sed dignissim sollicitudin, quam ex ultricies nisi, at euismod metus sapien ut risus. Mauris fringilla non nisi vitae pulvinar. Pellentesque vel arcu fringilla, aliquet diam eu, tincidunt leo.
+
+Vestibulum pellentesque ultrices sapien, in pulvinar nisl suscipit vel. Vestibulum et elit dui. Phasellus sem nibh, ullamcorper vitae blandit vel, ultricies nec ipsum. Aliquam erat volutpat. Nulla mi est, malesuada ornare convallis eu, feugiat non neque. Ut maximus augue et massa auctor pretium. Aliquam semper turpis non diam dignissim, varius accumsan lorem tempor.
+
+Aenean ut tellus et diam mattis consectetur. Pellentesque finibus volutpat mattis. Pellentesque euismod vehicula enim eu ultrices. Praesent cursus vitae nunc vel tincidunt. Donec faucibus ipsum metus, nec volutpat nisi dapibus dictum. Morbi gravida pretium urna, laoreet rutrum mi tempus sed. Proin est lacus, aliquam a aliquam in, posuere quis libero. Sed nec ante et sapien blandit rutrum. Suspendisse tristique congue quam imperdiet egestas. Nullam a est ex.
+
+Mauris nec pharetra diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque elit nulla, dictum sagittis efficitur ac, malesuada at nisl. Quisque auctor, libero sit amet auctor fringilla, dui tellus lobortis neque, in volutpat ipsum nibh at urna. Sed a iaculis ipsum, sed pulvinar ligula. Phasellus tincidunt elit id lacus laoreet feugiat. Sed sagittis odio magna, eget vulputate quam vestibulum viverra.
+
+Vivamus rutrum ipsum sapien. Vivamus aliquet interdum magna, at vehicula diam hendrerit ut. In et euismod odio. Aenean blandit accumsan ullamcorper. Donec consequat elit ultrices lacus elementum, in lobortis tortor ultricies. Morbi maximus in leo a pulvinar. Nullam a convallis felis, ut maximus dolor. Duis nisl diam, fringilla ac risus tincidunt, mollis efficitur quam. Nam id varius dolor, sit amet pretium elit. Nunc commodo nisi dui, vitae faucibus lectus dapibus quis. Praesent ante augue, iaculis ac dapibus quis, commodo in ante. Donec scelerisque convallis ullamcorper. Suspendisse potenti. Etiam nec cursus odio.
+
+Nulla facilisi. Donec eu dui lobortis, euismod diam pellentesque, tempor odio. Fusce quis porttitor odio, id elementum urna. Mauris interdum sed diam euismod ornare. Morbi a ullamcorper felis. Praesent condimentum consequat metus. Ut semper et elit at bibendum.
+
+[color=green]Etiam porttitor tempor dolor, a vestibulum odio. Nam nec dignissim dolor. Suspendisse a viverra eros. Nullam ut mauris finibus, fringilla ligula sed, interdum velit. Nulla placerat libero vel tortor pharetra, ut ullamcorper ligula pellentesque. Curabitur a condimentum libero, vitae maximus purus. Vestibulum sem augue, aliquet ac semper nec, eleifend eget nisl. Nulla facilisi. Pellentesque mi leo, pretium at purus sit amet, mollis lobortis eros. Etiam elit mi, bibendum eget nunc ac, vulputate fringilla augue. Praesent dignissim fringilla tristique.[/color]"
+text = "
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna enim, venenatis sed elit eget, imperdiet fermentum velit. Mauris finibus nunc diam, id tincidunt purus semper a. Nunc consequat tempus porttitor. Nam laoreet nisi sed elementum mollis. Praesent tempor elit sed tempor interdum. Nunc pharetra justo dui, eget venenatis diam finibus quis. Pellentesque nulla ex, finibus sed elementum nec, placerat sed turpis. Suspendisse finibus gravida sollicitudin. Aenean porttitor tincidunt tortor a sodales. Fusce a aliquam nulla. Praesent quis velit ornare, consequat arcu ut, maximus lectus.
+
+Ut ut elit eleifend lacus pharetra malesuada. Donec sed sollicitudin dui, aliquet mattis turpis. Proin auctor scelerisque libero, eu ullamcorper ipsum scelerisque eget. Duis lacinia nibh id magna mollis ultrices. Suspendisse accumsan lobortis turpis eu pretium. Vivamus feugiat varius justo. Etiam ligula enim, fermentum non urna at, congue efficitur dui.
+
+Nam scelerisque turpis ut finibus molestie. Pellentesque placerat mollis ex eget fringilla. Proin volutpat mi ac turpis dignissim rutrum. Aliquam eu justo lectus. Cras aliquet augue elit, ac viverra enim gravida ut. Nam eu quam quis nisi venenatis convallis eget ac lacus. Aenean eget fringilla tellus. Fusce diam lectus, pulvinar a facilisis sed, sagittis in erat. Donec purus elit, viverra in iaculis sed, congue eu urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In placerat sed nulla sed laoreet.
+
+Proin posuere auctor facilisis. Morbi ac eros arcu. Maecenas rhoncus blandit malesuada. Sed et eros non lacus accumsan molestie in vitae velit. Integer posuere ante nec ornare vehicula. Mauris nunc ipsum, congue non nisl nec, placerat cursus nunc. Vestibulum dui ex, placerat et erat nec, imperdiet vehicula nunc. Etiam ut fermentum est, nec cursus lectus. Praesent eget est a augue elementum bibendum. Nam suscipit facilisis ornare. Nulla at ligula pulvinar, tempor nunc quis, pretium erat.
+
+Vestibulum faucibus non dolor eget rhoncus. Integer posuere felis massa, sed suscipit sapien ultrices id. Duis imperdiet nisl at viverra feugiat. Donec in ex molestie, molestie elit a, ornare odio. Vestibulum congue est at elementum facilisis. Duis sed libero ligula. Suspendisse enim nulla, laoreet vel leo nec, aliquet rutrum dolor. Duis augue risus, hendrerit et rhoncus non, iaculis vel libero. Maecenas accumsan eros ac arcu finibus ultricies. Curabitur non vestibulum magna. Maecenas non risus tempor, finibus nisi a, rutrum ante. Fusce magna eros, efficitur eget sem id, placerat maximus diam. Sed maximus odio ac sem facilisis luctus. Donec non efficitur sem.
+
+In rutrum vestibulum lorem, at interdum sapien consequat quis. Donec ut tincidunt orci. Vivamus pellentesque enim sed commodo ultrices. Morbi luctus dolor vel ante euismod pretium. Pellentesque fringilla ipsum turpis. Suspendisse a ex sapien. Donec ipsum erat, interdum vitae venenatis vitae, consectetur ut est. In blandit lectus nec viverra blandit. Duis a ipsum est. Mauris vel nisl ut sem vehicula interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pharetra mi lorem, vel dapibus magna blandit vel. Sed elit tortor, porta sed enim nec, eleifend rhoncus ante.
+
+Nam dapibus sem nisl, sit amet porttitor nibh semper at. Etiam efficitur mauris eu sollicitudin sagittis. Aenean a mi ipsum. Sed luctus luctus justo id posuere. Pellentesque vulputate tempor tortor, in rutrum turpis euismod et. Maecenas eu faucibus diam, at ornare diam. Cras viverra quam ut lacus pulvinar efficitur. Fusce pharetra ipsum semper interdum fermentum. Aenean vestibulum eleifend elit ut egestas. Duis justo lacus, pretium nec erat quis, feugiat dapibus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi sem velit, lobortis a ultricies at, sagittis consequat odio.
+
+Nulla sed velit metus. Curabitur iaculis pharetra ex, sed congue justo varius id. Integer ac ligula sed erat pulvinar lobortis. Nulla facilisis blandit dui, id gravida urna. Curabitur tincidunt enim sed venenatis egestas. Cras consequat diam sit amet pharetra malesuada. Proin ut tincidunt eros. Curabitur neque ipsum, euismod nec eros vitae, lacinia venenatis mauris. Etiam et odio vel nunc porttitor pulvinar. Donec nec nibh id dolor posuere fringilla. Proin malesuada laoreet purus vitae iaculis. Fusce libero nisi, condimentum vel risus id, vestibulum ullamcorper augue.
+
+Nam sed mattis est. Suspendisse non gravida leo. Vestibulum aliquam urna vitae aliquam hendrerit. Integer nec volutpat urna. Curabitur vitae erat sem. Vestibulum feugiat viverra eros. In aliquam rhoncus egestas. Vestibulum ullamcorper, tellus sed dignissim sollicitudin, quam ex ultricies nisi, at euismod metus sapien ut risus. Mauris fringilla non nisi vitae pulvinar. Pellentesque vel arcu fringilla, aliquet diam eu, tincidunt leo.
+
+Vestibulum pellentesque ultrices sapien, in pulvinar nisl suscipit vel. Vestibulum et elit dui. Phasellus sem nibh, ullamcorper vitae blandit vel, ultricies nec ipsum. Aliquam erat volutpat. Nulla mi est, malesuada ornare convallis eu, feugiat non neque. Ut maximus augue et massa auctor pretium. Aliquam semper turpis non diam dignissim, varius accumsan lorem tempor.
+
+Aenean ut tellus et diam mattis consectetur. Pellentesque finibus volutpat mattis. Pellentesque euismod vehicula enim eu ultrices. Praesent cursus vitae nunc vel tincidunt. Donec faucibus ipsum metus, nec volutpat nisi dapibus dictum. Morbi gravida pretium urna, laoreet rutrum mi tempus sed. Proin est lacus, aliquam a aliquam in, posuere quis libero. Sed nec ante et sapien blandit rutrum. Suspendisse tristique congue quam imperdiet egestas. Nullam a est ex.
+
+Mauris nec pharetra diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque elit nulla, dictum sagittis efficitur ac, malesuada at nisl. Quisque auctor, libero sit amet auctor fringilla, dui tellus lobortis neque, in volutpat ipsum nibh at urna. Sed a iaculis ipsum, sed pulvinar ligula. Phasellus tincidunt elit id lacus laoreet feugiat. Sed sagittis odio magna, eget vulputate quam vestibulum viverra.
+
+Vivamus rutrum ipsum sapien. Vivamus aliquet interdum magna, at vehicula diam hendrerit ut. In et euismod odio. Aenean blandit accumsan ullamcorper. Donec consequat elit ultrices lacus elementum, in lobortis tortor ultricies. Morbi maximus in leo a pulvinar. Nullam a convallis felis, ut maximus dolor. Duis nisl diam, fringilla ac risus tincidunt, mollis efficitur quam. Nam id varius dolor, sit amet pretium elit. Nunc commodo nisi dui, vitae faucibus lectus dapibus quis. Praesent ante augue, iaculis ac dapibus quis, commodo in ante. Donec scelerisque convallis ullamcorper. Suspendisse potenti. Etiam nec cursus odio.
+
+Nulla facilisi. Donec eu dui lobortis, euismod diam pellentesque, tempor odio. Fusce quis porttitor odio, id elementum urna. Mauris interdum sed diam euismod ornare. Morbi a ullamcorper felis. Praesent condimentum consequat metus. Ut semper et elit at bibendum.
+
+Etiam porttitor tempor dolor, a vestibulum odio. Nam nec dignissim dolor. Suspendisse a viverra eros. Nullam ut mauris finibus, fringilla ligula sed, interdum velit. Nulla placerat libero vel tortor pharetra, ut ullamcorper ligula pellentesque. Curabitur a condimentum libero, vitae maximus purus. Vestibulum sem augue, aliquet ac semper nec, eleifend eget nisl. Nulla facilisi. Pellentesque mi leo, pretium at purus sit amet, mollis lobortis eros. Etiam elit mi, bibendum eget nunc ac, vulputate fringilla augue. Praesent dignissim fringilla tristique."
+scroll_following = true
+
+[node name="Current" type="RichTextLabel" parent="PanelContainer/MarginContainer/HSplitContainer/PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+bbcode_text = "
+
+[color=blue]Lorem[/color] [color=red]ipsum[/color] dolor sit amet, consectetur adipiscing elit. Etiam magna enim, venenatis sed elit eget, imperdiet fermentum velit. Mauris finibus nunc diam, id tincidunt purus semper a. Nunc consequat tempus porttitor. Nam laoreet nisi sed elementum mollis. Praesent tempor elit sed tempor interdum. Nunc pharetra justo dui, eget venenatis diam finibus quis. Pellentesque nulla ex, finibus sed elementum nec, placerat sed turpis. Suspendisse finibus gravida sollicitudin. Aenean porttitor tincidunt tortor a sodales. Fusce a aliquam nulla. Praesent quis velit ornare, consequat arcu ut, maximus lectus.
+
+Ut ut elit eleifend lacus pharetra malesuada. Donec sed sollicitudin dui, aliquet mattis turpis. Proin auctor scelerisque libero, eu ullamcorper ipsum scelerisque eget. Duis lacinia nibh id magna mollis ultrices. Suspendisse accumsan lobortis turpis eu pretium. Vivamus feugiat varius justo. Etiam ligula enim, fermentum non urna at, congue efficitur dui.
+
+Nam scelerisque turpis ut finibus molestie. Pellentesque placerat mollis ex eget fringilla. Proin volutpat mi ac turpis dignissim rutrum. Aliquam eu justo lectus. Cras aliquet augue elit, ac viverra enim gravida ut. Nam eu quam quis nisi venenatis convallis eget ac lacus. Aenean eget fringilla tellus. Fusce diam lectus, pulvinar a facilisis sed, sagittis in erat. Donec purus elit, viverra in iaculis sed, congue eu urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In placerat sed nulla sed laoreet.
+
+Proin posuere auctor facilisis. Morbi ac eros arcu. Maecenas rhoncus blandit malesuada. Sed et eros non lacus accumsan molestie in vitae velit. Integer posuere ante nec ornare vehicula. Mauris nunc ipsum, congue non nisl nec, placerat cursus nunc. Vestibulum dui ex, placerat et erat nec, imperdiet vehicula nunc. Etiam ut fermentum est, nec cursus lectus. Praesent eget est a augue elementum bibendum. Nam suscipit facilisis ornare. Nulla at ligula pulvinar, tempor nunc quis, pretium erat.
+
+Vestibulum faucibus non dolor eget rhoncus. Integer posuere felis massa, sed suscipit sapien ultrices id. Duis imperdiet nisl at viverra feugiat. Donec in ex molestie, molestie elit a, ornare odio. Vestibulum congue est at elementum facilisis. Duis sed libero ligula. Suspendisse enim nulla, laoreet vel leo nec, aliquet rutrum dolor. Duis augue risus, hendrerit et rhoncus non, iaculis vel libero. Maecenas accumsan eros ac arcu finibus ultricies. Curabitur non vestibulum magna. Maecenas non risus tempor, finibus nisi a, rutrum ante. Fusce magna eros, efficitur eget sem id, placerat maximus diam. Sed maximus odio ac sem facilisis luctus. Donec non efficitur sem.
+
+In rutrum vestibulum lorem, at interdum sapien consequat quis. Donec ut tincidunt orci. Vivamus pellentesque enim sed commodo ultrices. Morbi luctus dolor vel ante euismod pretium. Pellentesque fringilla ipsum turpis. Suspendisse a ex sapien. Donec ipsum erat, interdum vitae venenatis vitae, consectetur ut est. In blandit lectus nec viverra blandit. Duis a ipsum est. Mauris vel nisl ut sem vehicula interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pharetra mi lorem, vel dapibus magna blandit vel. Sed elit tortor, porta sed enim nec, eleifend rhoncus ante.
+
+Nam dapibus sem nisl, sit amet porttitor nibh semper at. Etiam efficitur mauris eu sollicitudin sagittis. Aenean a mi ipsum. Sed luctus luctus justo id posuere. Pellentesque vulputate tempor tortor, in rutrum turpis euismod et. Maecenas eu faucibus diam, at ornare diam. Cras viverra quam ut lacus pulvinar efficitur. Fusce pharetra ipsum semper interdum fermentum. Aenean vestibulum eleifend elit ut egestas. Duis justo lacus, pretium nec erat quis, feugiat dapibus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi sem velit, lobortis a ultricies at, sagittis consequat odio.
+
+Nulla sed velit metus. Curabitur iaculis pharetra ex, sed congue justo varius id. Integer ac ligula sed erat pulvinar lobortis. Nulla facilisis blandit dui, id gravida urna. Curabitur tincidunt enim sed venenatis egestas. Cras consequat diam sit amet pharetra malesuada. Proin ut tincidunt eros. Curabitur neque ipsum, euismod nec eros vitae, lacinia venenatis mauris. Etiam et odio vel nunc porttitor pulvinar. Donec nec nibh id dolor posuere fringilla. Proin malesuada laoreet purus vitae iaculis. Fusce libero nisi, condimentum vel risus id, vestibulum ullamcorper augue.
+
+Nam sed mattis est. Suspendisse non gravida leo. Vestibulum aliquam urna vitae aliquam hendrerit. Integer nec volutpat urna. Curabitur vitae erat sem. Vestibulum feugiat viverra eros. In aliquam rhoncus egestas. Vestibulum ullamcorper, tellus sed dignissim sollicitudin, quam ex ultricies nisi, at euismod metus sapien ut risus. Mauris fringilla non nisi vitae pulvinar. Pellentesque vel arcu fringilla, aliquet diam eu, tincidunt leo.
+
+Vestibulum pellentesque ultrices sapien, in pulvinar nisl suscipit vel. Vestibulum et elit dui. Phasellus sem nibh, ullamcorper vitae blandit vel, ultricies nec ipsum. Aliquam erat volutpat. Nulla mi est, malesuada ornare convallis eu, feugiat non neque. Ut maximus augue et massa auctor pretium. Aliquam semper turpis non diam dignissim, varius accumsan lorem tempor.
+
+Aenean ut tellus et diam mattis consectetur. Pellentesque finibus volutpat mattis. Pellentesque euismod vehicula enim eu ultrices. Praesent cursus vitae nunc vel tincidunt. Donec faucibus ipsum metus, nec volutpat nisi dapibus dictum. Morbi gravida pretium urna, laoreet rutrum mi tempus sed. Proin est lacus, aliquam a aliquam in, posuere quis libero. Sed nec ante et sapien blandit rutrum. Suspendisse tristique congue quam imperdiet egestas. Nullam a est ex.
+
+Mauris nec pharetra diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque elit nulla, dictum sagittis efficitur ac, malesuada at nisl. Quisque auctor, libero sit amet auctor fringilla, dui tellus lobortis neque, in volutpat ipsum nibh at urna. Sed a iaculis ipsum, sed pulvinar ligula. Phasellus tincidunt elit id lacus laoreet feugiat. Sed sagittis odio magna, eget vulputate quam vestibulum viverra.
+
+Vivamus rutrum ipsum sapien. Vivamus aliquet interdum magna, at vehicula diam hendrerit ut. In et euismod odio. Aenean blandit accumsan ullamcorper. Donec consequat elit ultrices lacus elementum, in lobortis tortor ultricies. Morbi maximus in leo a pulvinar. Nullam a convallis felis, ut maximus dolor. Duis nisl diam, fringilla ac risus tincidunt, mollis efficitur quam. Nam id varius dolor, sit amet pretium elit. Nunc commodo nisi dui, vitae faucibus lectus dapibus quis. Praesent ante augue, iaculis ac dapibus quis, commodo in ante. Donec scelerisque convallis ullamcorper. Suspendisse potenti. Etiam nec cursus odio.
+
+Nulla facilisi. Donec eu dui lobortis, euismod diam pellentesque, tempor odio. Fusce quis porttitor odio, id elementum urna. Mauris interdum sed diam euismod ornare. Morbi a ullamcorper felis. Praesent condimentum consequat metus. Ut semper et elit at bibendum.
+
+[color=green]Etiam porttitor tempor dolor, a vestibulum odio. Nam nec dignissim dolor. Suspendisse a viverra eros. Nullam ut mauris finibus, fringilla ligula sed, interdum velit. Nulla placerat libero vel tortor pharetra, ut ullamcorper ligula pellentesque. Curabitur a condimentum libero, vitae maximus purus. Vestibulum sem augue, aliquet ac semper nec, eleifend eget nisl. Nulla facilisi. Pellentesque mi leo, pretium at purus sit amet, mollis lobortis eros. Etiam elit mi, bibendum eget nunc ac, vulputate fringilla augue. Praesent dignissim fringilla tristique.[/color]"
+text = "
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna enim, venenatis sed elit eget, imperdiet fermentum velit. Mauris finibus nunc diam, id tincidunt purus semper a. Nunc consequat tempus porttitor. Nam laoreet nisi sed elementum mollis. Praesent tempor elit sed tempor interdum. Nunc pharetra justo dui, eget venenatis diam finibus quis. Pellentesque nulla ex, finibus sed elementum nec, placerat sed turpis. Suspendisse finibus gravida sollicitudin. Aenean porttitor tincidunt tortor a sodales. Fusce a aliquam nulla. Praesent quis velit ornare, consequat arcu ut, maximus lectus.
+
+Ut ut elit eleifend lacus pharetra malesuada. Donec sed sollicitudin dui, aliquet mattis turpis. Proin auctor scelerisque libero, eu ullamcorper ipsum scelerisque eget. Duis lacinia nibh id magna mollis ultrices. Suspendisse accumsan lobortis turpis eu pretium. Vivamus feugiat varius justo. Etiam ligula enim, fermentum non urna at, congue efficitur dui.
+
+Nam scelerisque turpis ut finibus molestie. Pellentesque placerat mollis ex eget fringilla. Proin volutpat mi ac turpis dignissim rutrum. Aliquam eu justo lectus. Cras aliquet augue elit, ac viverra enim gravida ut. Nam eu quam quis nisi venenatis convallis eget ac lacus. Aenean eget fringilla tellus. Fusce diam lectus, pulvinar a facilisis sed, sagittis in erat. Donec purus elit, viverra in iaculis sed, congue eu urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In placerat sed nulla sed laoreet.
+
+Proin posuere auctor facilisis. Morbi ac eros arcu. Maecenas rhoncus blandit malesuada. Sed et eros non lacus accumsan molestie in vitae velit. Integer posuere ante nec ornare vehicula. Mauris nunc ipsum, congue non nisl nec, placerat cursus nunc. Vestibulum dui ex, placerat et erat nec, imperdiet vehicula nunc. Etiam ut fermentum est, nec cursus lectus. Praesent eget est a augue elementum bibendum. Nam suscipit facilisis ornare. Nulla at ligula pulvinar, tempor nunc quis, pretium erat.
+
+Vestibulum faucibus non dolor eget rhoncus. Integer posuere felis massa, sed suscipit sapien ultrices id. Duis imperdiet nisl at viverra feugiat. Donec in ex molestie, molestie elit a, ornare odio. Vestibulum congue est at elementum facilisis. Duis sed libero ligula. Suspendisse enim nulla, laoreet vel leo nec, aliquet rutrum dolor. Duis augue risus, hendrerit et rhoncus non, iaculis vel libero. Maecenas accumsan eros ac arcu finibus ultricies. Curabitur non vestibulum magna. Maecenas non risus tempor, finibus nisi a, rutrum ante. Fusce magna eros, efficitur eget sem id, placerat maximus diam. Sed maximus odio ac sem facilisis luctus. Donec non efficitur sem.
+
+In rutrum vestibulum lorem, at interdum sapien consequat quis. Donec ut tincidunt orci. Vivamus pellentesque enim sed commodo ultrices. Morbi luctus dolor vel ante euismod pretium. Pellentesque fringilla ipsum turpis. Suspendisse a ex sapien. Donec ipsum erat, interdum vitae venenatis vitae, consectetur ut est. In blandit lectus nec viverra blandit. Duis a ipsum est. Mauris vel nisl ut sem vehicula interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pharetra mi lorem, vel dapibus magna blandit vel. Sed elit tortor, porta sed enim nec, eleifend rhoncus ante.
+
+Nam dapibus sem nisl, sit amet porttitor nibh semper at. Etiam efficitur mauris eu sollicitudin sagittis. Aenean a mi ipsum. Sed luctus luctus justo id posuere. Pellentesque vulputate tempor tortor, in rutrum turpis euismod et. Maecenas eu faucibus diam, at ornare diam. Cras viverra quam ut lacus pulvinar efficitur. Fusce pharetra ipsum semper interdum fermentum. Aenean vestibulum eleifend elit ut egestas. Duis justo lacus, pretium nec erat quis, feugiat dapibus neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi sem velit, lobortis a ultricies at, sagittis consequat odio.
+
+Nulla sed velit metus. Curabitur iaculis pharetra ex, sed congue justo varius id. Integer ac ligula sed erat pulvinar lobortis. Nulla facilisis blandit dui, id gravida urna. Curabitur tincidunt enim sed venenatis egestas. Cras consequat diam sit amet pharetra malesuada. Proin ut tincidunt eros. Curabitur neque ipsum, euismod nec eros vitae, lacinia venenatis mauris. Etiam et odio vel nunc porttitor pulvinar. Donec nec nibh id dolor posuere fringilla. Proin malesuada laoreet purus vitae iaculis. Fusce libero nisi, condimentum vel risus id, vestibulum ullamcorper augue.
+
+Nam sed mattis est. Suspendisse non gravida leo. Vestibulum aliquam urna vitae aliquam hendrerit. Integer nec volutpat urna. Curabitur vitae erat sem. Vestibulum feugiat viverra eros. In aliquam rhoncus egestas. Vestibulum ullamcorper, tellus sed dignissim sollicitudin, quam ex ultricies nisi, at euismod metus sapien ut risus. Mauris fringilla non nisi vitae pulvinar. Pellentesque vel arcu fringilla, aliquet diam eu, tincidunt leo.
+
+Vestibulum pellentesque ultrices sapien, in pulvinar nisl suscipit vel. Vestibulum et elit dui. Phasellus sem nibh, ullamcorper vitae blandit vel, ultricies nec ipsum. Aliquam erat volutpat. Nulla mi est, malesuada ornare convallis eu, feugiat non neque. Ut maximus augue et massa auctor pretium. Aliquam semper turpis non diam dignissim, varius accumsan lorem tempor.
+
+Aenean ut tellus et diam mattis consectetur. Pellentesque finibus volutpat mattis. Pellentesque euismod vehicula enim eu ultrices. Praesent cursus vitae nunc vel tincidunt. Donec faucibus ipsum metus, nec volutpat nisi dapibus dictum. Morbi gravida pretium urna, laoreet rutrum mi tempus sed. Proin est lacus, aliquam a aliquam in, posuere quis libero. Sed nec ante et sapien blandit rutrum. Suspendisse tristique congue quam imperdiet egestas. Nullam a est ex.
+
+Mauris nec pharetra diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque elit nulla, dictum sagittis efficitur ac, malesuada at nisl. Quisque auctor, libero sit amet auctor fringilla, dui tellus lobortis neque, in volutpat ipsum nibh at urna. Sed a iaculis ipsum, sed pulvinar ligula. Phasellus tincidunt elit id lacus laoreet feugiat. Sed sagittis odio magna, eget vulputate quam vestibulum viverra.
+
+Vivamus rutrum ipsum sapien. Vivamus aliquet interdum magna, at vehicula diam hendrerit ut. In et euismod odio. Aenean blandit accumsan ullamcorper. Donec consequat elit ultrices lacus elementum, in lobortis tortor ultricies. Morbi maximus in leo a pulvinar. Nullam a convallis felis, ut maximus dolor. Duis nisl diam, fringilla ac risus tincidunt, mollis efficitur quam. Nam id varius dolor, sit amet pretium elit. Nunc commodo nisi dui, vitae faucibus lectus dapibus quis. Praesent ante augue, iaculis ac dapibus quis, commodo in ante. Donec scelerisque convallis ullamcorper. Suspendisse potenti. Etiam nec cursus odio.
+
+Nulla facilisi. Donec eu dui lobortis, euismod diam pellentesque, tempor odio. Fusce quis porttitor odio, id elementum urna. Mauris interdum sed diam euismod ornare. Morbi a ullamcorper felis. Praesent condimentum consequat metus. Ut semper et elit at bibendum.
+
+Etiam porttitor tempor dolor, a vestibulum odio. Nam nec dignissim dolor. Suspendisse a viverra eros. Nullam ut mauris finibus, fringilla ligula sed, interdum velit. Nulla placerat libero vel tortor pharetra, ut ullamcorper ligula pellentesque. Curabitur a condimentum libero, vitae maximus purus. Vestibulum sem augue, aliquet ac semper nec, eleifend eget nisl. Nulla facilisi. Pellentesque mi leo, pretium at purus sit amet, mollis lobortis eros. Etiam elit mi, bibendum eget nunc ac, vulputate fringilla augue. Praesent dignissim fringilla tristique."
+scroll_following = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer/HSplitContainer"]
+margin_left = 890.0
+margin_right = 1806.0
+margin_bottom = 966.0
+split_offset = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer"]
+margin_right = 916.0
+margin_bottom = 186.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 909.0
+margin_bottom = 179.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer"]
+margin_right = 177.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 177.0
+margin_bottom = 66.0
+text = "Location: Library"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 70.0
+margin_right = 177.0
+margin_bottom = 84.0
+text = "Date: 28/01/2021"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 177.0
+margin_bottom = 102.0
+text = "Time: 21:37"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 106.0
+margin_right = 177.0
+margin_bottom = 120.0
+text = "Gold: 710"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer"]
+margin_left = 181.0
+margin_right = 358.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 25.0
+margin_right = 177.0
+margin_bottom = 39.0
+text = "Name: James"
+
+[node name="Label6" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 43.0
+margin_right = 177.0
+margin_bottom = 57.0
+text = "Lvl: 12"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 61.0
+margin_right = 177.0
+margin_bottom = 75.0
+text = "HP: 5/55"
+
+[node name="Label5" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 79.0
+margin_right = 177.0
+margin_bottom = 93.0
+text = "PP: 105"
+
+[node name="Label7" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 97.0
+margin_right = 177.0
+margin_bottom = 111.0
+text = "XP: 300/1200"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 115.0
+margin_right = 177.0
+margin_bottom = 129.0
+text = "Atk: 45"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 133.0
+margin_right = 177.0
+margin_bottom = 147.0
+text = "Def: 66"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer"]
+margin_left = 362.0
+margin_right = 539.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 25.0
+margin_right = 177.0
+margin_bottom = 39.0
+text = "Name: Edie"
+
+[node name="Label6" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 43.0
+margin_right = 177.0
+margin_bottom = 57.0
+text = "Lvl: 12"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 61.0
+margin_right = 177.0
+margin_bottom = 75.0
+text = "HP: 50"
+
+[node name="Label5" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 79.0
+margin_right = 177.0
+margin_bottom = 93.0
+text = "PP: 105"
+
+[node name="Label7" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 97.0
+margin_right = 177.0
+margin_bottom = 111.0
+text = "XP: 300/1200"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 115.0
+margin_right = 177.0
+margin_bottom = 129.0
+text = "Atk: 45"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 133.0
+margin_right = 177.0
+margin_bottom = 147.0
+text = "Def: 66"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer"]
+margin_left = 543.0
+margin_right = 720.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 25.0
+margin_right = 177.0
+margin_bottom = 39.0
+text = "Name: Joe"
+
+[node name="Label6" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 43.0
+margin_right = 177.0
+margin_bottom = 57.0
+text = "Lvl: 12"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 61.0
+margin_right = 177.0
+margin_bottom = 75.0
+text = "HP: 50"
+
+[node name="Label5" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 79.0
+margin_right = 177.0
+margin_bottom = 93.0
+text = "PP: 105"
+
+[node name="Label7" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 97.0
+margin_right = 177.0
+margin_bottom = 111.0
+text = "XP: 300/1200"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 115.0
+margin_right = 177.0
+margin_bottom = 129.0
+text = "Atk: 45"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 133.0
+margin_right = 177.0
+margin_bottom = 147.0
+text = "Def: 66"
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer"]
+margin_left = 724.0
+margin_right = 902.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 25.0
+margin_right = 178.0
+margin_bottom = 39.0
+text = "Name: Esme"
+
+[node name="Label6" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 43.0
+margin_right = 178.0
+margin_bottom = 57.0
+text = "Lvl: 12"
+
+[node name="Label4" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 61.0
+margin_right = 178.0
+margin_bottom = 75.0
+text = "HP: 50"
+
+[node name="Label5" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 79.0
+margin_right = 178.0
+margin_bottom = 93.0
+text = "PP: 105"
+
+[node name="Label7" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 97.0
+margin_right = 178.0
+margin_bottom = 111.0
+text = "XP: 300/1200"
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 115.0
+margin_right = 178.0
+margin_bottom = 129.0
+text = "Atk: 45"
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/PanelContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 133.0
+margin_right = 178.0
+margin_bottom = 147.0
+text = "Def: 66"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer"]
+margin_top = 198.0
+margin_right = 916.0
+margin_bottom = 966.0
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+margin_right = 916.0
+margin_bottom = 694.0
+size_flags_vertical = 3
+
+[node name="Interact" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Button5" type="Button" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact"]
+margin_right = 908.0
+margin_bottom = 160.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact/Button5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact"]
+margin_top = 164.0
+margin_right = 908.0
+margin_bottom = 325.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact/Button6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact"]
+margin_top = 329.0
+margin_right = 908.0
+margin_bottom = 489.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact"]
+margin_top = 493.0
+margin_right = 908.0
+margin_bottom = 654.0
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact"]
+visible = false
+margin_top = 681.0
+margin_right = 908.0
+margin_bottom = 727.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+disabled = true
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact/Button7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+text = "COMMIT"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer/Interact"]
+margin_top = 658.0
+margin_right = 908.0
+margin_bottom = 658.0
+
+[node name="Equipment" type="Container" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Travel" type="Container" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Options" type="Container" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="PanelContainer" type="Container" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+margin_top = 698.0
+margin_right = 916.0
+margin_bottom = 768.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Button4" type="Button" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 909.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HSplitContainer/VSplitContainer/VBoxContainer/PanelContainer/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.7573
+margin_right = -34.2427
+text = "BACK"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

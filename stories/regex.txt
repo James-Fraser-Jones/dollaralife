@@ -1,0 +1,1 @@
+[!?]\d+(\[\n[\s\S]*?\n\]|\n[^\n]*)	<- parse all relevant clauses

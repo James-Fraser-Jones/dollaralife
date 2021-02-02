@@ -28,47 +28,51 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer/MarginContainer"]
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1856.0
 margin_bottom = 1016.0
-split_offset = -500
+split_offset = 250
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/HSplitContainer"]
-margin_right = 397.0
-margin_bottom = 966.0
-size_flags_horizontal = 3
-scroll_horizontal_enabled = false
-
-[node name="GameButtons" type="VBoxContainer" parent="PanelContainer/MarginContainer/HSplitContainer/ScrollContainer"]
-margin_top = 483.0
-margin_right = 397.0
-margin_bottom = 483.0
-size_flags_horizontal = 3
-size_flags_vertical = 6
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/HSplitContainer"]
-margin_left = 409.0
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
 margin_right = 1806.0
-margin_bottom = 966.0
+margin_bottom = 727.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 custom_constants/margin_left = 0
 custom_constants/margin_bottom = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/HSplitContainer/MarginContainer"]
-margin_right = 1397.0
-margin_bottom = 966.0
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VSplitContainer/MarginContainer"]
+margin_right = 1806.0
+margin_bottom = 727.0
 
-[node name="GameLog" type="RichTextLabel" parent="PanelContainer/MarginContainer/HSplitContainer/MarginContainer/PanelContainer"]
+[node name="GameLogScroll" type="ScrollContainer" parent="PanelContainer/MarginContainer/VSplitContainer/MarginContainer/PanelContainer"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1390.0
-margin_bottom = 959.0
+margin_right = 1799.0
+margin_bottom = 720.0
+scroll_horizontal_enabled = false
+
+[node name="GameLog" type="RichTextLabel" parent="PanelContainer/MarginContainer/VSplitContainer/MarginContainer/PanelContainer/GameLogScroll"]
+margin_top = 698.0
+margin_right = 1792.0
+margin_bottom = 713.0
 size_flags_horizontal = 3
+size_flags_vertical = 10
 bbcode_enabled = true
-text = "
-"
+fit_content_height = true
 scroll_following = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VSplitContainer"]
+margin_top = 739.0
+margin_right = 1806.0
+margin_bottom = 966.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="GameButtons" type="VBoxContainer" parent="PanelContainer/MarginContainer/VSplitContainer/ScrollContainer"]
+margin_right = 1806.0
+size_flags_horizontal = 3

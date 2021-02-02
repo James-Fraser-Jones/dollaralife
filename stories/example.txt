@@ -1,0 +1,40 @@
+!0
+You wake in a forest.
+
+?1
+Walk north
+
+?2
+Make a fire
+
+
+!1
+You walk north and fall in a hole and break your legs. You die hours later.
+
+
+!2[
+You make a fire and the glow illuminates a shadowy figure in the trees. Your breath is suddenly sucked away.
+
+Your heart beats faster.
+]
+
+?3
+Gasp for breath
+
+?4
+Accept death
+
+?5
+Cut open your windpipe
+
+
+!3
+You desperately gasp for breath but to no avail. You're dead within minutes.
+
+
+!4
+You decide to accept death. Game over.
+
+
+!5
+You cut open your windpipe and are able to breathe freely again. You stumble through the forest in a daze and die from blood loss several hours later.

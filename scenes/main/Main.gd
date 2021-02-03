@@ -4,6 +4,7 @@ export var story_name : String = "example"
 export var start_index : int = 0
 
 const ChoiceButton = preload("res://scenes/choice_button/ChoiceButton.tscn")
+const Regex = "[!?]\\d+(\\[\\n[\\s\\S]*?\\n\\]|\\n[^\\n]*)"
 
 var game_log : RichTextLabel
 var game_log_scroll : ScrollContainer
@@ -18,65 +19,40 @@ func _ready():
 	
 	#read file
 	var file : File = File.new()
-	file.open("res://stories/" + story_name + ".txt", file.READ)
+	file.open("res://stories/" + story_name + ".story", file.READ)
 	var story_text : String = file.get_as_text()
 	file.close()
 	
 	#parse file into clauses
 	var regex : RegEx = RegEx.new()
-	var reg_string : String = "[!?]\\d+(\\[\\n[\\s\\S]*?\\n\\]|\\n[^\\n]*)" #backslashes have to be escaped
-	regex.compile(reg_string)
+	regex.compile(Regex)
 	var clauses : Array = []
 	for clause in regex.search_all(story_text):
 		clauses.push_back(clause.get_string())
 	
 	#get first clause
-	var first_clause = clauses.pop_front()
+	var first_clause : String = clauses.pop_front()
 	
-	if first_clause == null: #ERROR CONDITION
+	#ERROR CONDITIONS
+	if first_clause == null: 
 		print("ERROR: No clauses parsed")
 		get_tree().quit()
-	
-	#declare vars
-	var current_snippet : Dictionary = {}
-	var lines : Array = first_clause.split("\n", true, 1) #split on first newline
-	
-	if lines[0].left(1) != "!": #ERROR CONDITION
+	elif first_clause.left(1) != "!":
 		print("ERROR: First parsed clause is not a snippet")
 		get_tree().quit()
 	
 	#create first snippet
-	if lines[0].right(lines[0].length() - 1) == "[":
-		current_snippet["index"] = int(lines[0].substr(1, lines[0].length() - 2))
-		current_snippet["text"] = lines[1].substr(0, lines[1].length() - 2)
-	else:
-		current_snippet["index"] = int(lines[0].substr(1))
-		current_snippet["text"] = lines[1]
+	var current_snippet : Dictionary = parse_clause(first_clause)
 	current_snippet["choices"] = []
 	
 	#transform remaining clauses
 	for clause in clauses:
-		lines = clause.split("\n", true, 1)
-		
-		if lines[0].left(1) == "!": #new snippet
+		if clause.left(1) == "!": #new snippet
 			story.push_back(current_snippet)
-			current_snippet = {}
-			if lines[0].right(lines[0].length() - 1) == "[":
-				current_snippet["index"] = int(lines[0].substr(1, lines[0].length() - 2))
-				current_snippet["text"] = lines[1].substr(0, lines[1].length() - 2)
-			else:
-				current_snippet["index"] = int(lines[0].substr(1))
-				current_snippet["text"] = lines[1]
+			current_snippet = parse_clause(clause)
 			current_snippet["choices"] = []
-			
 		else: #new choice
-			var choice : Dictionary = {}
-			if lines[0].right(lines[0].length() - 1) == "[":
-				choice["index"] = int(lines[0].substr(1, lines[0].length() - 2))
-				choice["text"] = lines[1].substr(0, lines[1].length() - 2)
-			else:
-				choice["index"] = int(lines[0].substr(1))
-				choice["text"] = lines[1]
+			var choice : Dictionary = parse_clause(clause)
 			current_snippet["choices"].push_back(choice)
 	
 	#push final snippet
@@ -94,13 +70,13 @@ func update_ui(new_index):
 		update_ui(start_index)
 	else:
 		#add divider to log
-		game_log.bbcode_text += "\n\n[color=#ff6680]-------------------[/color]\n\n"
+		game_log.bbcode_text += "\n[color=#ff6680]---------------------------------------------------[/color]\n\n"
 		
 		#find new snippet
 		var new_snippet : Dictionary = custom_bsearch(new_index)
 		
 		#add snippet text to log
-		game_log.bbcode_text += new_snippet.text
+		game_log.bbcode_text += indent(new_snippet.text)
 		
 		#scroll log to bottom
 		yield(get_tree(), "idle_frame")
@@ -114,22 +90,41 @@ func update_ui(new_index):
 		#add new buttons
 		if new_snippet.choices.size() > 0:
 			for choice in new_snippet.choices:
-				var choice_button = ChoiceButton.instance()
-				choice_button.get_child(0).bbcode_text = choice.text
-				#why do I need to use a custom signal for this? why can't I just connect to the button's signal instead?
-				choice_button.connect("pressed", self, "update_ui", [choice["index"]], CONNECT_ONESHOT)
-				game_buttons.add_child(choice_button)
+				add_button(choice["index"], choice["text"])
 		else:
-			var choice_button = ChoiceButton.instance()
-			choice_button.get_child(0).bbcode_text = "[color=#ff6680]RESET[/color]"
-			choice_button.connect("pressed", self, "update_ui", [-1], CONNECT_ONESHOT) 
-			game_buttons.add_child(choice_button)
+			add_button(-1, "[color=#ff6680]RESET[/color]")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_ESCAPE:
 			get_tree().quit()
-			
+
+#UTILITY
+
+func indent(s : String) -> String:
+	var arr : Array = s.split("\n")
+	var acc : String = ""
+	for sentence in arr:
+		acc += "\t" + sentence + "\n"
+	return acc
+	
+func parse_clause(clause : String) -> Dictionary:
+	var lines : Array = clause.split("\n", true, 1)
+	var data : Dictionary = {}
+	if lines[0].right(lines[0].length() - 1) == "[":
+		data["index"] = int(lines[0].substr(1, lines[0].length() - 2))
+		data["text"] = lines[1].substr(0, lines[1].length() - 2)
+	else:
+		data["index"] = int(lines[0].substr(1))
+		data["text"] = lines[1]
+	return data
+
+func add_button(index: int, text : String):
+	var choice_button = ChoiceButton.instance()
+	choice_button.get_child(0).bbcode_text = "\n" + indent(text)
+	choice_button.connect("pressed", self, "update_ui", [index], CONNECT_ONESHOT)
+	game_buttons.add_child(choice_button)
+
 func custom_bsearch(target_index : int) -> Dictionary:
 	var l : int = 0
 	var r : int = story.size() - 1

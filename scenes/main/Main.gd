@@ -8,6 +8,7 @@ const ChoiceButton = preload("res://scenes/choice_button/ChoiceButton.tscn")
 var game_log : RichTextLabel
 var game_log_scroll : ScrollContainer
 var game_buttons : VBoxContainer
+var story : Array = []
 
 func _ready():
 	#set aliases
@@ -29,37 +30,64 @@ func _ready():
 	for clause in regex.search_all(story_text):
 		clauses.push_back(clause.get_string())
 	
-	#for clause in clauses:
-	#	print("Clause:")
-	#	print(clause)
-	#	print("End Clause:")
+	#get first clause
+	var first_clause = clauses.pop_front()
 	
-	#var hmm : Dictionary = {
-	#	"new_snippet" : true 	#whether first character is ! or ?
-	#,	"index" : 0 			#what the number is
-	#,	"text" : "Hello world!" #either next line or everything after first newline minus last 2 characters (a newline and closing brace)
-	#}
+	if first_clause == null: #ERROR CONDITION
+		print("ERROR: No clauses parsed")
+		get_tree().quit()
 	
-	#split on first newline
-	#check first character to determine whether snippet or choice
-	#check last character to determine whether short or long
-	#retrieve number (ignoring last character if necessary)
-	#if short, text is rest of content
-	#if long, text is rest of content ignoring last two chars
+	#declare vars
+	var current_snippet : Dictionary = {}
+	var lines : Array = first_clause.split("\n", true, 1) #split on first newline
 	
-	#transform clauses into array of dictionaries
-	var story : Array = []
-	var current_snippet : Dictionary = {
-		"index": 0
-	,  	"text": ""
-	,  	"choices": []
-	}
+	if lines[0].left(1) != "!": #ERROR CONDITION
+		print("ERROR: First parsed clause is not a snippet")
+		get_tree().quit()
+	
+	#create first snippet
+	if lines[0].right(lines[0].length() - 1) == "[":
+		current_snippet["index"] = int(lines[0].substr(1, lines[0].length() - 2))
+		current_snippet["text"] = lines[1].substr(0, lines[1].length() - 2)
+	else:
+		current_snippet["index"] = int(lines[0].substr(1))
+		current_snippet["text"] = lines[1]
+	current_snippet["choices"] = []
+	
+	#transform remaining clauses
 	for clause in clauses:
-		var lines : Array = clause.split("\n", true, 1) #split on first newline
+		lines = clause.split("\n", true, 1)
+		
+		if lines[0].left(1) == "!": #new snippet
+			story.push_back(current_snippet)
+			current_snippet = {}
+			if lines[0].right(lines[0].length() - 1) == "[":
+				current_snippet["index"] = int(lines[0].substr(1, lines[0].length() - 2))
+				current_snippet["text"] = lines[1].substr(0, lines[1].length() - 2)
+			else:
+				current_snippet["index"] = int(lines[0].substr(1))
+				current_snippet["text"] = lines[1]
+			current_snippet["choices"] = []
+			
+		else: #new choice
+			var choice : Dictionary = {}
+			if lines[0].right(lines[0].length() - 1) == "[":
+				choice["index"] = int(lines[0].substr(1, lines[0].length() - 2))
+				choice["text"] = lines[1].substr(0, lines[1].length() - 2)
+			else:
+				choice["index"] = int(lines[0].substr(1))
+				choice["text"] = lines[1]
+			current_snippet["choices"].push_back(choice)
+	
+	#push final snippet
+	story.push_back(current_snippet)
+	
+	#sort snippets by index to enable log time search
+	story.sort_custom(SnippetUtility, "compare")
 	
 	#start game
 	update_ui(start_index)
-	
+
 func update_ui(new_index):
 	if new_index == -1:
 		game_log.bbcode_text = ""
@@ -69,14 +97,10 @@ func update_ui(new_index):
 		game_log.bbcode_text += "\n\n[color=#ff6680]-------------------[/color]\n\n"
 		
 		#find new snippet
-		var new_snippet : Dictionary
-		for snippet in story:
-			if snippet.index == new_index: #linear time search is expensive
-				new_snippet = snippet
-				break
+		var new_snippet : Dictionary = custom_bsearch(new_index)
 		
 		#add snippet text to log
-		game_log.bbcode_text += new_snippet.text #("\n\t" + new_snippet.text + "\n")
+		game_log.bbcode_text += new_snippet.text
 		
 		#scroll log to bottom
 		yield(get_tree(), "idle_frame")
@@ -93,7 +117,7 @@ func update_ui(new_index):
 				var choice_button = ChoiceButton.instance()
 				choice_button.get_child(0).bbcode_text = choice.text
 				#why do I need to use a custom signal for this? why can't I just connect to the button's signal instead?
-				choice_button.connect("pressed", self, "update_ui", [choice.index], CONNECT_ONESHOT)
+				choice_button.connect("pressed", self, "update_ui", [choice["index"]], CONNECT_ONESHOT)
 				game_buttons.add_child(choice_button)
 		else:
 			var choice_button = ChoiceButton.instance()
@@ -105,52 +129,25 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.pressed and event.scancode == KEY_ESCAPE:
 			get_tree().quit()
-
-var story : Array = [
-	{ 	"index": 0
-	,  	"text": "You wake in a forest."
-	,  	"choices": [
-			{	"index": 1
-			,	"text": "Walk north"
-			}
-		,
-			{	"index": 2
-			,	"text": "Make a fire"
-			}
-		]
-	}
-,
-	{ 	"index": 1
-	,  	"text": "You walk north and fall in a hole and break your legs. You die hours later."
-	,  	"choices": []
-	}
-,
-	{ 	"index": 2
-	,  	"text": "You make a fire and the glow illuminates a shadowy figure in the trees. Your breath is suddenly sucked away."
-	,  	"choices": [
-			{	"index": 3
-			,	"text": "Gasp for breath"
-			}
-		,
-			{	"index": 4
-			,	"text": "Accept death"
-			}
-		,
-			{	"index": 5
-			,	"text": "Cut open your windpipe"
-			}
-		]
-	}
-,	{	"index": 3
-	,	"text": "You desperately gasp for breath but to no avail. You're dead within minutes."
-	,	"choices": []
-	}
-,	{	"index": 4
-	,	"text": "You decide to accept death. Game over."
-	,	"choices": []
-	}
-,	{	"index": 5
-	,	"text": "You cut open your windpipe and are able to breathe freely again. You stumble through the forest in a daze and die from blood loss several hours later."
-	,	"choices": []
-	}
-]
+			
+func custom_bsearch(target_index : int) -> Dictionary:
+	var l : int = 0
+	var r : int = story.size() - 1
+	var m : int
+	
+	while l <= r:
+		m = floor((l + r) / 2)
+		if story[m]["index"] < target_index:
+			l = m + 1
+		elif story[m]["index"] > target_index:
+			r = m - 1
+		else:
+			return story[m]
+			
+	print("ERROR: Failed to find snippet with index: " + str(target_index))
+	get_tree().quit()
+	
+	return {}
+	
+class SnippetUtility: 
+	static func compare(a, b): return a["index"] < b["index"]

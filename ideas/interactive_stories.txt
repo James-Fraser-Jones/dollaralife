@@ -1,0 +1,59 @@
+Traps to avoid:
+-Unclear narrative direction
+-Long boring details
+-Unexpected events which override or otherwise abuse players' decisions (or which objectively prioritize/reward certain decisions more than others)
+
+Problem:
+Players want to tell the story through their own actions. You want to tell your own story which (initially) is probably quite linear.
+You have to find the right compromise between coercing players into experiencing certain important (linear) aspects of the story without infringing too much on their freedom as the player.
+
+Types of action:
+-Functional: Ordinary actions like eating, walking, buying things, etc..
+-Social
+-Violent
+-Deceptive
+...
+
+Try to base the entire story around fun/relevent/interesting actions the player might expect to be able to make, given the circumstances.
+Example:
+You stumble into a bar
+Actions:
+-Get drunk
+-Fight someone
+-Slide a beer to someone
+-Play a tune on the jukebox
+-Dance
+-Eavesdrop on some people
+-Sit down at a table
+-Go to the toilet
+-Sneak behind the counter
+-Play a gambling game
+-Leave
+-Get someone else drunk
+-Flirt with someone
+-Buy food
+-Throw up on someone
+-Pickpocket someone
+-Call the police
+-Impersonate staff
+-Spike someone's drink
+-Defend someone
+Conclusion: Maybe bars aren't very exciting (that's fair).
+
+From here, we can think about what information the player might be able to learn and act on while performing some of these actions.
+Knowledge:
+-Who the characters are
+-Relationships between them
+-Who owns the tavern and what they're like
+-What secrets does the tavern hold
+	-This is purgatory
+	-You came here because you died on your quest (main game)
+	-That's why everything is weird here
+	-Everything outside of the tavern is an illusion
+	-How can you escape?
+-What is the relationship of the tavern to the surrounding area
+
+We can also think about the available characters in the scene, how they might appropriately respond to the player, what things the player might be able to uncover about them.
+Characters:
+Finally we can think about interesting and diverse endings.
+Endings:

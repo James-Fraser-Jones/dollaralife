@@ -52,4 +52,3 @@ You stare back into the creatures eyes and find yourself transported back into y
 
 [color=green]YOU WIN![/color]
 ]
-

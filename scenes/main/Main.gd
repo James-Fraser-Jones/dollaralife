@@ -13,8 +13,8 @@ var story : Array = []
 
 func _ready():
 	#set aliases
-	game_log_scroll = $PanelContainer/MarginContainer/VSplitContainer/MarginContainer/PanelContainer/GameLogScroll
-	game_log = $PanelContainer/MarginContainer/VSplitContainer/MarginContainer/PanelContainer/GameLogScroll/GameLog
+	game_log_scroll = $PanelContainer/MarginContainer/VSplitContainer/PanelContainer/MarginContainer/GameLogScroll
+	game_log = $PanelContainer/MarginContainer/VSplitContainer/PanelContainer/MarginContainer/GameLogScroll/GameLog
 	game_buttons = $PanelContainer/MarginContainer/VSplitContainer/ScrollContainer/GameButtons
 	
 	#read file
@@ -61,6 +61,9 @@ func _ready():
 	#sort snippets by index to enable log time search
 	story.sort_custom(SnippetUtility, "compare")
 	
+	#check story for consistency (no missing snippets, unique snippet indices, no unchosen snippets)
+	#hmmm
+	
 	#start game
 	update_ui(start_index)
 
@@ -76,7 +79,7 @@ func update_ui(new_index):
 		var new_snippet : Dictionary = custom_bsearch(new_index)
 		
 		#add snippet text to log
-		game_log.bbcode_text += indent(new_snippet.text)
+		game_log.bbcode_text += new_snippet.text + "\n"
 		
 		#scroll log to bottom
 		yield(get_tree(), "idle_frame")
@@ -129,7 +132,6 @@ func custom_bsearch(target_index : int) -> Dictionary:
 	var l : int = 0
 	var r : int = story.size() - 1
 	var m : int
-	
 	while l <= r:
 		m = floor((l + r) / 2)
 		if story[m]["index"] < target_index:
@@ -138,11 +140,7 @@ func custom_bsearch(target_index : int) -> Dictionary:
 			r = m - 1
 		else:
 			return story[m]
-			
-	print("ERROR: Failed to find snippet with index: " + str(target_index))
-	get_tree().quit()
-	
-	return {}
+	return {"index": -1, "text": "ERROR: Failed to find snippet with index: " + str(target_index), "choices": []}
 	
 class SnippetUtility: 
 	static func compare(a, b): return a["index"] < b["index"]
